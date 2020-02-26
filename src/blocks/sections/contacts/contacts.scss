@@ -1,0 +1,57 @@
+.contacts {
+	&__inner {
+		padding: 48px 0;
+	}
+	
+	&__phone-wrap {
+		margin-bottom: 16px;
+	}
+
+	&__phone {
+		background-color: #49a133;
+		font-size: 14px;
+		color: $white;
+	}
+
+	&__mail {
+		color: inherit;
+	}
+
+	&__custom {
+		height: 800px;
+	}
+	
+	@media (min-width: $screen-lg) {
+		&__title {
+			margin-bottom: 32px;
+		}
+
+		&__phone-wrap {
+			margin-bottom: 8px;
+		}
+
+		&__phone {
+			font-size: 24px;
+			font-weight: 700;
+			line-height: 32px;
+			height: auto;
+			color: $colorBlack;
+			padding: 0;
+			background: none;
+			font-family: "GothamPro-Bold", "Arial", sans-serif;
+
+		}
+
+		&__mail {
+			text-decoration: none;
+		}
+		
+	} 
+
+	@media (min-width: $screen-xl) {
+		&__inner {
+			padding: 160px 0;
+		}
+		
+	}
+}

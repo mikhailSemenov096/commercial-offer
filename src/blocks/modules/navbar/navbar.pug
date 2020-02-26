@@ -1,0 +1,40 @@
+mixin navbar(parentClass)
+	- 
+		const navbarList = [
+			{
+				descr: 'О группе',
+				href: '#about-group'
+			},
+			{
+				descr: 'Стоимость',
+				href: '#estimate'
+			},
+
+			{
+				descr: 'Сроки',
+				href: '#time-constraints'
+			},
+
+			{
+				descr: 'Компетенции',
+				href: '#services'
+			},
+			{	
+				descr: 'Работы',
+				href: '#portfolio'
+			},
+			{
+				descr: 'Клиенты',
+				href: '#clients'
+			},
+			{
+				descr: 'Контакты',
+				href: '#contacts'
+			}
+		]
+
+	div(class=`${parentClass}__navbar navbar`)
+		ul.navbar__list
+			each navbarItem, i in navbarList
+				li.navbar__item
+					a.navbar__link(href= navbarItem.href)= navbarItem.descr 

@@ -1,0 +1,42 @@
+{
+	"stages": [
+		{
+			"startDate": "2019-01-10",
+			"endDate": "2019-01-11",
+			"controlDate": "2019-02-05",
+			"key": "prototyping"
+		},
+
+		{
+			"startDate": "2019-02-05",
+			"endDate": "2019-03-28",
+			"controlDate": "2019-02-20",
+			"key": "design",
+			"controlKey": "testing"
+		},
+
+		{
+			"startDate": "2019-02-20",
+			"endDate": "2019-03-13",
+			"controlDate": "2019-03-15",
+			"key": "frontend",
+			"controlKey": "testing"
+		},
+
+		{
+			"startDate": "2019-03-15",
+			"endDate": "2019-04-27",
+			"controlDate": "2019-04-26",
+			"key": "integration",
+			"controlKey": "testing"
+		},
+
+		{
+			"startDate": "2019-04-26",
+			"endDate": "2019-04-30",
+			"controlDate": "2019-04-30",
+			"key": "testing",
+			"controlKey": "testing"
+		}
+	]
+}

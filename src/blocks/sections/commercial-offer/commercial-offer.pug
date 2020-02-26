@@ -1,0 +1,22 @@
+mixin commercial-offer()
+	section.commercial-offer
+		.container
+			.commercial-offer__inner.section-inner
+				.commercial-offer__row
+					.commercial-offer__info
+						.commercial-offer__subtitle.section-small-subtitle Коммерческое предложение
+						h1.commercial-offer__title.section-title.section-title_h1 Веб-сайт <br> для гостиницы «Отель ОКА»
+						.commercial-offer__logo-wrap
+							img.commercial-offer__logo(src='img/commercial-offer/oka-logo.png' alt='Ока')
+						ul.commercial-offer__services
+							li.commercial-offer__services-item Дизайн
+							li.commercial-offer__services-item Разработка 
+							li.commercial-offer__services-item Брендинг  
+							li.commercial-offer__services-item Продвижение  
+							li.commercial-offer__services-item SMM 
+							li.commercial-offer__services-item Маркетинг   
+							//- /  Разработка  /  Брендинг  /  Продвижение  /  SMM  /  Маркетинг
+					.commercial-offer__img-wrap
+						include ../../../img/sprite/s-line.svg
+						//- svg.commercial-offer__img(id='s-lines' viewBox='0 0 513 856')
+						//- 	use(xlink:href='img/symbols.svg#s-line')

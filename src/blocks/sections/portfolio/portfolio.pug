@@ -1,0 +1,58 @@
+mixin portfolio()
+	-
+		const portfolioList = [
+			{
+				title: 'Миэль',
+				descr: 'Агентство недвижимости №1 в Московском регионе. 120 офисов в России',
+				results: ['50% рост конверсии', '30% кол-ва заказов'],
+				mod: '_purple',
+				img: 'img/portfolio/portfolio-1.png'
+			},
+
+			{
+				title: 'Кей',
+				descr: 'Крупный интренет-магазин техники с оборотом 450 млн. руб. в месяц',
+				results: ['50% рост конверсии', '30% рост кол-ва заказов'],
+				mod: '_blue',
+				img: 'img/portfolio/portfolio-2.png'
+			},
+			
+			{
+				title: 'Стилл-арт',
+				descr: 'Компания по проектированию, производству и монтажу стеллажных конструкций',
+				results: ['+ 60% глубина просмотра', '+ 90% время на сайте', '- 6 % отказов'],
+				mod: '_grey',
+				img: 'img/portfolio/portfolio-3.png'
+			},
+
+			{
+				title: 'Кидбург',
+				descr: 'Кидбург — это продуманные игровые центры, где дети развивают навыки, которые будут полезны всю жизнь.',
+				results: ['65% рост конверсии'],
+				mod: '_green',
+				img: 'img/portfolio/portfolio-4.png'
+			},
+		]
+
+
+	section.portfolio(id='portfolio')
+		.portfolio__container.container
+			.portfolio__inner.section-inner
+				.section-small-subtitle Наши работы
+				h2.portfolio__title.portfolio__title_pp.section-title Реализованные решения, похожие на ваш проект
+				.portfolio__row
+					each portfolioItem, i in portfolioList
+						.portfolio__col.portfolio__col_md-5
+							.portfolio__item.portfolio__item_pp(class=`portfolio__item${portfolioItem.mod}`)
+								.portfolio__item-main
+									.portfolio__item-info
+										.portfolio__item-title= portfolioItem.title
+										.portfolio__item-descr= portfolioItem.descr
+										ul.portfolio__item-results
+											each result, j in portfolioItem.results
+												li.portfolio__item-results-elem= result
+									.portfolio__item-img-wrap
+										img.portfolio__item-img(src= portfolioItem.img alt= portfolioItem.title)
+								.portfolio__links
+									a.portfolio__link.portfolio__link_show-case.btn(href='#') Смотреть кейс
+									a.portfolio__link.btn(href='#') Скачать PDF

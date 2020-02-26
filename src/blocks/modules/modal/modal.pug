@@ -1,0 +1,22 @@
+include ../field/field.pug
+
+mixin modal()
+	.overlay.overlay-modal.box-hidden
+		.popup.box-hidden(id='popup-email')
+			span.popup__close.popup__close-btn
+			h2.popup__title.section-title Отправить на почту
+			form.popup__form(id='popup-email-form')
+				+field({
+					id: 'popup-email-field',
+					type: 'text',
+					label: 'Введите email',
+					mod: 'popup__field-wrap',
+					name: 'popup-email'
+				})
+				.popup__form-btn-wrap
+					button.popup__form-btn.btn-main(type='submit' disabled) Отправить
+		
+		.popup.popup-success.box-hidden(id="popup-success")
+			span.popup__close.popup__close-btn
+			h2.popup__title.section-title Письмо отправлено
+			button.popup__close.btn-main() Хорошо!

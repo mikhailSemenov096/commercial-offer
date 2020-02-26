@@ -1,0 +1,117 @@
+.header {
+	padding: 15px 0;
+	background-color: $white;
+	position: fixed;
+	z-index: 9;
+	top: 0;
+	left: 0;
+	width: 100%;
+	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
+
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+	}
+	
+	&__logo-wrap {
+		max-width: 48px;
+	}
+
+	&__navbar {
+		display: none;
+	}
+
+	&__btns-wrap {
+		display: flex;
+	}
+
+	&__btn {
+		border: 2px solid transparent;
+		background-color: #f0f0f0;
+
+		svg {
+			path, rect {
+				fill: #cfcfcf;
+			}
+		}
+
+		.header__btn-descr {
+			display: none;
+		}
+
+		// @include adaptive-hover {
+
+		// }
+
+		@include mr(12px);
+	}
+
+	@media (min-width: 480px) {
+		&__btn {
+			border-color: $colorBlack;
+			background-color: transparent;
+			svg {
+				path {
+					fill: $colorBlack;
+				}
+			}
+		}
+
+		&__btn_mail {
+			border-radius: 20px;
+			width: auto;
+			// line-height: 38px;
+			padding: 0 23px;
+			font-size: 12px;
+
+			.header__btn-descr {
+				display: inline-block;
+			}
+
+			svg {
+				display: none;
+			}
+		}
+	}
+
+	@media (min-width: $screen-lg) {
+		padding: 16px 0;
+
+		&__row {
+			justify-content: flex-start;
+		}
+
+		&__logo-wrap {
+			margin-right: 50px;
+			max-width: 64px;
+		}
+
+		&__navbar {
+			display: block;
+			flex-grow: 1;
+
+			.navbar__item {
+				@include mr(20px)
+			}
+		}
+
+		&__btn {
+			@include mr(16px  )
+		}
+	}
+
+	@media (min-width: $screen-xl) {
+		&__logo-wrap {
+			margin-right: 64px;
+		}
+
+		&__navbar {
+			.navbar__item {
+				@include mr(40px)
+			}
+		}
+	}
+
+}

@@ -1,0 +1,61 @@
+// В этом файле должны быть стили для БЭМ-блока breadcrumbs, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+$text-color:                  hsl(0, 0%, 10%) !default;
+
+.breadcrumbs {
+
+  $block-name:                &;
+  // #{$block-name}__element
+
+  padding: 0;
+  list-style: none;
+  // margin-top: 1rem;
+  // margin-bottom: 1rem;
+  margin-bottom: 40px;
+  color: $text-color;
+  display: flex;
+
+  a {
+    color: $text-color;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $text-color;
+      text-decoration: none;
+    }
+  }
+
+
+
+  &__item {
+    display: inline-block;
+    margin-right: 10px;
+    white-space: nowrap;
+
+    &:first-child {
+      &::before {
+        content: '';
+        width: 6px;
+        height: 10px;
+        display: inline-block;
+        background: url('../img/sprite/bread-prev-arrow.svg') no-repeat center/cover;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__item--line {
+    &::after {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      width: 20px;
+      height: 1px;
+      background-color: rgba($gray-darkest, .2);
+      color: $gray;
+    }
+  }
+}

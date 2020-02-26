@@ -1,0 +1,23 @@
+include ../../modules/navbar/navbar.pug
+include ../../modules/progress-bar/progress-bar.pug
+
+mixin page-header()
+	header.header.body-hidden-elem
+		+progress-bar()
+		.container.container_max
+			.header__row
+				.header__logo-wrap
+					a.header__logo.logo(href='#')
+						img.logo__img(src='img/logo/logo.svg' alt='Логотип')
+				+navbar('header')
+				.header__btns-wrap
+					button.header__btn.header__btn_mail.btn-circle(data-modal='popup-email')
+						span.header__btn-descr Получить на почту
+						include ../../../img/sprite/mail.svg
+					button.header__btn.btn-circle
+						include ../../../img/sprite/print.svg
+
+
+  		
+
+

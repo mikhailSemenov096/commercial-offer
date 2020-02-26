@@ -1,0 +1,151 @@
+.services {
+	&__inner {
+		padding: 46px 0 40px;
+	}
+
+	&__row {
+		@include row(30px, 30px, 30px, 0, 0);
+	}
+
+	&__col {
+		@include col();
+		&_lg-8 {
+			@include col(lg, 8, 10, 0);
+		}
+
+		&_lg-2 {
+			@include col(lg, 2, 10, 0);
+		}
+	}
+
+	&__main {
+		margin-bottom: 32px;
+	}
+
+	&__main-row  {
+		display: flex;
+		overflow-x: scroll;
+		overflow-y: auto;
+		margin: 0 $grid-gutter-width / -2;
+		padding: 0 $grid-gutter-width / 4;
+		-webkit-overflow-scrolling: touch;
+		&::-webkit-scrollbar {
+			display: none;
+    		-webkit-appearance: none;
+    		height: 0;
+		}
+
+	}
+
+	&__main-col {
+		padding-left: $grid-gutter-width / 4;
+		padding-right: $grid-gutter-width / 4;
+		flex: 0 0 275px;
+		max-width: 275px;
+		&:last-child {
+			padding-right: $grid-gutter-width / 2;
+		}
+	}
+
+	&__main-item {
+		background: #f8f8f8;
+		border-radius: 4px;
+		height: 100%;
+		padding: 32px 16px 38px;
+	}
+
+	&__main-item-title {
+		margin-bottom: 10px;
+	}
+
+	&__main-list-item {
+		@include mb(8px);
+	}
+
+	@media (min-width: $screen-md) {
+		&__main-row {
+			flex-wrap: wrap;
+			padding: 0;
+			margin-bottom: -32px;
+			overflow: visible;
+		}
+
+		&__main-col {
+			padding-left: $grid-gutter-width / 2;
+			padding-right: $grid-gutter-width / 2;
+			max-width: 50%;
+			flex: 0 0 50%;
+			margin-bottom: 32px;
+		}
+
+		&__main-item {
+			background-color: transparent;
+			border-radius: none;
+			padding: 0;
+		}
+	}
+
+	@media (min-width: $screen-lg) {
+		&__inner {
+			padding: 120px 0;
+		}
+		
+		&__title {
+			max-width: 510px;
+			&_pp {
+				margin-bottom: 66px;
+			}
+		}
+
+		&__main {
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		&__main-item-title {
+			margin-bottom: 21px;
+		}
+
+		&__main-row {
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		&__col {
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		&__main-col {
+			padding-left: 0;
+			padding-right: 15px;
+			max-width: 50%;
+			flex: 0 0 50%;
+			margin-bottom: 64px;
+			&_pp {
+				margin-bottom: 75px;
+			}
+		}
+
+		&__main-item {
+
+		}
+	}
+
+	@media (min-width: $screen-xl) {
+		&__main {
+			margin-bottom: 0;
+		}
+
+		&__main-row {
+			margin-bottom: -75px;
+		}
+
+		&__main-col {
+			max-width: 50%;
+			flex: 0 0 50%;
+		}
+	}
+
+
+}

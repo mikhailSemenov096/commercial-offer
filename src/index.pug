@@ -1,0 +1,33 @@
+extends pug/layout.pug
+
+include blocks/modules/modal/modal.pug
+include blocks/sections/page-header/page-header.pug
+
+include blocks/sections/page-header/page-header.pug
+include blocks/sections/commercial-offer/commercial-offer.pug
+include blocks/sections/about-group/about-group.pug
+include blocks/sections/estimate/estimate.pug
+include blocks/sections/time-constraints/time-constraints.pug
+include blocks/sections/services/services.pug
+include blocks/sections/portfolio/portfolio.pug
+include blocks/sections/clients/clients.pug
+include blocks/sections/contacts/contacts.pug
+include blocks/sections/page-footer/page-footer.pug
+
+block meta
+  title Главная
+block header
+  +page-header()
+block content
+  +commercial-offer()
+  +about-group()
+  +estimate()
+  +time-constraints()
+  +services()
+  +portfolio()
+  +clients()
+  +contacts()
+  +modal()
+  
+//- block footer
+//-   +page-footer()

@@ -1,0 +1,37 @@
+// Style plagin
+@import "variables";
+
+// @import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
+
+// My style
+
+@import "grid-mixins";
+
+@import "functions";
+
+@import "fonts";
+@import "global";
+
+@import "../blocks/companents/btn/btn";
+@import "../blocks/companents/container/container";
+// @import "../blocks/companents/title/title";
+
+@import "base";
+
+// Модули
+@import "../blocks/modules/navbar/navbar";
+@import "../blocks/modules/progress-bar/progress-bar";
+@import "../blocks/modules/modal/modal";
+@import "../blocks/modules/field/field";
+
+// Лендинг (секции)
+@import "../blocks/sections/page-header/page-header";
+@import "../blocks/sections/commercial-offer/commercial-offer";
+@import "../blocks/sections/about-group/about-group";
+@import "../blocks/sections/estimate/estimate";
+@import "../blocks/sections/time-constraints/time-constraints";
+@import "../blocks/sections/services/services";
+@import "../blocks/sections/portfolio/portfolio";
+@import "../blocks/sections/clients/clients";
+@import "../blocks/sections/contacts/contacts";
+@import "../blocks/sections/page-footer/page-footer";

@@ -1,0 +1,11 @@
+.navbar {
+	&__list {
+		display: flex;
+	}
+
+	&__link {
+		color: $colorBlack;
+		text-decoration: none;
+		font-size: 14px;
+	}
+}

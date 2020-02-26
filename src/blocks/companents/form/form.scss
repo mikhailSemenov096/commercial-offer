@@ -1,0 +1,96 @@
+// В этом файле должны быть стили для БЭМ-блока form, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+$font-family--headings:       -apple-system, BlinkMacSystemFont, 'Roboto', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
+
+$font-size--h3:               rem(24px) !default;
+
+$line-height:                 1.5 !default;
+
+.form {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__fieldset {
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__legend {
+    display: block;
+    width: 100%;
+    max-width: 100%; // Привет IE
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: $font-size--h3;
+    font-family: $font-family--headings;
+    font-weight: 700;
+    line-height: $line-height;
+    white-space: normal; // Привет IE
+    color: currentColor;
+  }
+}
+
+.form__subs {
+  position: relative;
+}
+
+.form__title {
+  letter-spacing: 0.22px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 22px;
+  margin-bottom: 20px;
+  color: $white;
+}
+
+.form__tagline {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  color: $white;
+  margin-bottom: 12px;
+  letter-spacing: 0.16px;
+}
+
+.form__link {
+  display: inline-block;
+  margin-bottom: 27px;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 22px;
+  letter-spacing: 0.12px;
+}
+
+.form__btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  font-size: 16px;
+  line-height: 22px;
+  padding: 22.5px 83px 22.5px 33px;
+  border-radius: 8px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 23px;
+    height: 14px;
+    background: url("../img/icon/icon-arrow-btn.svg") no-repeat center / cover;
+  }
+}
+
+.form__input-subs {
+  padding-right: 210px;
+}

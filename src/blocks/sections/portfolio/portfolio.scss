@@ -1,0 +1,370 @@
+.portfolio {
+	position: relative;
+	overflow: hidden;
+
+	&__inner {
+		padding: 40px 0 10px;
+	}
+	
+	&__title {
+		max-width: 195px;
+	}
+
+	&__row {
+		// @include row(30px, 30px, 30px, 30px, 96px);
+		@include row(30px, 30px, 30px, 30px, 0);
+	}
+
+	&__col {
+		@include col(xs, 10, 10, 0);
+		@include mb(10px);
+
+		&_md-5 {
+			@include col(md, 5, 10);
+			@include col(xl, 5, 10, 0);
+			// @include col(xl, 5, 10, 96px);
+		}
+	}
+
+	&__item {
+		color: $white;
+		padding: 32px $grid-gutter-width / 2;
+		overflow: hidden;
+		&_purple {
+			background-color: #b70b65;;
+		}
+
+		&_blue {
+			background-color: #00a5e5;;
+		}
+
+		&_grey {
+			background-color: #666666;
+		}
+
+		&_green {
+			background-color: #51a43d;
+		}
+	}
+
+	&__item-main {
+		display: flex;
+		margin-bottom: 32px;
+	}
+
+	&__item-info {
+		flex: 1 0 0;
+		max-width: calc(100% - 102px);
+	}
+
+	&__item-title {
+		font-size: 24px;
+		line-height: 32px;
+		font-weight: 700;
+		margin-bottom: 8px;
+		font-family: "GothamPro-Bold", "Arial", sans-serif;
+	}
+
+	&__item-descr {
+		font-size: 12px;
+		line-height: 20px;
+		margin-bottom: 16px;
+		
+	}
+
+	&__item-results {
+		font-size: 11px;
+		line-height: 22px;
+		font-weight: 700;
+		padding-left: 18px;
+		text-indent: -18px;
+		font-family: "GothamPro-Bold", "Arial", sans-serif;
+	}
+
+	&__item-results-elem {
+		// @include mb(8px)
+		&::before {
+			content: '';
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			background-color: $white;
+			margin-right: 8px;
+			margin-bottom: -1px;
+		}
+	}
+
+	&__links {
+		display: flex;
+	}
+
+	&__link {
+		background-color: rgba($colorBlack, .1);
+		flex: 0 0 123px;
+		max-width: 123px;
+		@include mr(8px);
+	}
+
+	&__item-img-wrap {
+		flex: 0 0 124px;
+		max-width: 124px;
+		// overflow: hidden;
+		margin-right: $grid-gutter-width / -2;
+		padding-top: 20px;
+	}
+
+	&__item-img {
+		display: block;
+		width: 226px;
+		max-width: none;
+		position: relative;
+		margin-left: auto;
+		margin-right: -102px;
+
+	}
+
+	@media (min-width: $screen-sm) {
+		&__item-info {
+			max-width: calc(100% - 232px);
+		}
+
+		&__item-img-wrap {
+			flex: 0 0 232px;
+			max-width: 232px;
+		}
+
+		&__item-img {
+			width: 380px;
+			margin-right: -148px;
+		}
+	}
+
+	@media (min-width: $screen-md) {
+		&__row {
+			margin-bottom: -30px;
+		}
+
+		&__col {
+			margin-bottom: 30px;
+			&:last-child {
+				margin-bottom: 30px;
+			}
+		}
+
+		&__item {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+
+		&__item-main {
+			flex: 1 0 auto;
+		}
+
+		&__item-info {
+			max-width: calc(100% - 102px);
+		}
+
+		&__item-img-wrap {
+			flex: 0 0 124px;
+			max-width: 124px;
+		}
+
+		&__item-img {
+			width: 226px;
+			margin-right: -102px;
+		}
+
+	}
+
+	@media (min-width: $screen-lg) {
+		&__title {
+			margin-bottom: 88px;
+			max-width: 400px;
+			&_pp {
+
+			}
+		}
+
+		&__col {
+			&:nth-child(2n + 2) {
+				.portfolio__item {
+					margin-top: -30px;
+				}
+			}
+		}
+
+		&__inner {
+			padding: 123px 0 144px;
+		}
+		
+		&__item-main {
+			margin-bottom: 50px;
+		}
+
+		&__item-title {
+			font-size: 36px;
+			line-height: 44px;
+			margin-bottom: 18px;
+
+		}
+		
+		&__item-results {
+			padding-left: 20px;
+		}
+
+		&__item-descr {
+			font-size: 14px;
+			line-height: 22px;
+			margin-bottom: 24px;
+			padding-left: 2px;
+		}
+
+		&__item-info {
+			max-width: calc(100% - 232px);
+		}
+
+		&__item-img-wrap {
+			flex: 0 0 232px;
+			max-width: 232px;
+			padding-top: 0;
+		}
+
+		&__item-img {
+			width: 380px;
+			margin-right: -148px;
+		}
+		
+	}
+
+	@media (min-width: $screen-xl) {
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 656px;
+			left: 3px;
+			min-width: 395px;
+			width: calc(((100% - 992px) / 2) + 166px);
+			height: 273px;
+			background-image: linear-gradient(90deg, #f8f8f8 10px, transparent 10px, transparent 100%);
+			background-size: 32px 100%;
+			z-index: -1;
+			// background-position: ;
+			
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 256px;
+			right: 0;
+			min-width: 273px;
+			width: calc((100% - 992px) / 2);
+			height: 170px;
+			background-image: linear-gradient(to bottom, #f8f8f8 10px, transparent 10px, transparent 100%);
+			background-size: 100% 32px;
+			z-index: -1;
+			// background-position: ;
+			
+		}
+		
+		&__container {
+			position: relative;
+			&::before {
+				content: '';
+				position: absolute;
+				bottom: 9px;
+				right: 0;
+				right: -241px;
+				width: 257px;
+				z-index: -1;
+				height: 513px;
+				background: url('../img/sprite/circle-grid.svg') no-repeat center/cover;
+			}
+		}
+
+		&__row {
+			width: 120%;
+			margin-bottom: -75px;
+			position: relative;
+			// justify-content: space-between;
+		}
+
+		&__col {
+			margin-bottom: 75px;
+			flex-grow: 1;
+			&:nth-child(2n + 2) {
+				.portfolio__item {
+					margin-top: -41px;
+				}
+			}
+		}
+
+		&__item-info {
+			max-width: calc(100% - 192px);
+		}
+
+		&__item {
+			padding: 48px 40px 32px;
+			width: calc(100% - 74px);
+			// margin-right: -122px;
+			height: auto;
+			min-height: 380px;
+			&_pp {
+				padding-top: 45px;
+			}
+		}
+
+		&__item-img-wrap {
+			padding-top: 11px;
+			flex: 0 0 192px;
+			max-width: 192px;
+		}
+
+		&__item-img {
+			margin-right: -188px;
+		}
+
+		&__links {
+			justify-content: space-between;
+		}
+
+		&__link {
+			background: none;
+			font-size: 14px;
+			line-height: 22px;
+			height: auto;
+			padding: 0;
+			flex: 0 0 auto;
+			transition: color .3s linear;
+			&:not(.portfolio__link_show-case) {
+				@include adaptive-hover() {
+					color: rgba(#fff, .5);
+				}
+			}
+
+			&_show-case {
+				position: relative;
+				padding-right: 41px;
+				&::after {
+					content: '';
+					position: absolute;
+					top: 50%;
+					right: 0;
+					transform: translate(100%, -50%);
+					width: 25px;
+					height: 17px;
+					background: url('../img/sprite/arrow-right.svg') no-repeat center/cover;
+					transition: transform .2s linear;
+				}
+				@include adaptive-hover() {
+					&::after {
+						transform: translate(100%, -50%) translateX(10px);
+					}
+				}
+			}
+		}
+	}
+}

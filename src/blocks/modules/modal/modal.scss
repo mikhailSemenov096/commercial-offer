@@ -1,0 +1,147 @@
+.overlay {
+	position: fixed;
+	z-index: 9;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(#999999, .5);
+	display: block;
+	opacity: 1;
+	text-align: center;
+	height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	white-space: nowrap;
+	transition-timing-function: linear;
+		
+	&::after {
+		content: '';
+		width: 0;
+		height: 100%;
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 0;
+	}
+}
+
+.popup {
+	display: inline-block;
+	vertical-align: middle;
+	white-space: normal;
+	padding: 40px 24px;
+	max-width: 545px;
+	width: 100%;
+	margin: 20px 0;
+	font-size: initial;
+	text-align: left;
+	position: relative;
+	transition: opacity .3s linear, transform .3s linear;
+	opacity: 1;
+	transform: translateY(0px);
+	background-color: #fff;
+	transition-timing-function: linear;
+	&_enter-to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	
+	&_leave-to {
+		transform: translateY(100px);
+		opacity: 0;
+	}
+
+	&__title {
+		font-size: 18px;
+		line-height: 32px;
+		margin-bottom: 23px;
+	}
+
+	&__close-btn {
+		display: block;
+		width: 16px;
+		height: 16px;
+		cursor: pointer;
+		position: absolute;
+		top: 24px;
+		right: 24px;
+		background: url('../img/sprite/close.svg') center/cover no-repeat;
+	}
+
+	&__field-wrap {
+		margin-bottom: 24px;
+	}
+
+	// &__form-btn {
+	// 	min-width: 114px;
+	// }
+
+	@media (min-width: $screen-lg) {
+		&__form {
+			display: flex;
+		}
+
+		&__field-wrap {
+			flex: 1 0 auto;
+			margin-right: 8px;
+			margin-bottom: 0;
+		}
+
+		&__title {
+			font-size: 24px;
+			line-height: 32px;
+			margin-bottom: 40px;
+		}
+	}
+}
+
+.popup-success {
+	transition-timing-function: linear;
+}
+
+.body_hidden {
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.smoothly-show {
+	transition-property: opacity;
+	transition-duration: .3s;
+}
+
+.box-hidden {
+	display: none;
+}
+
+.box-hidden.smoothly-show {
+	display: block;
+	opacity: 0;
+}
+
+.popup_next {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: 0;
+}
+
+.popup_enter-to, .popup_leave-to {
+	transition-property: all;
+	transition-duration: .3s;
+}
+
+.box-hidden.popup_enter-to {
+	display: inline-block;
+	transform: translateY(-100px);
+	opacity: 0;
+}
+
+.box-hidden.popup_leave-to {
+	display: inline-block;
+	transform: translateY(100px);
+	opacity: 0;
+}

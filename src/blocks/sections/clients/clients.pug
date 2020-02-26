@@ -1,0 +1,34 @@
+mixin clients()
+	-
+		const clients = [
+			{src: 'img/clients/ulmart.svg', alt: 'Ulmart.ru'},
+			{src: 'img/clients/mastercard.svg', alt: 'mastercard'},
+			{src: 'img/clients/pochta.svg', alt: 'Почта России'},
+			{src: 'img/clients/tinkoff.svg', alt: 'Tinkoff Bank'},
+			{src: 'img/clients/miel.svg', alt: 'Миэль'},
+			{src: 'img/clients/sber.svg', alt: 'Сбербанк'},
+			{src: 'img/clients/olta.svg', alt: 'Olta Travel'},
+			{src: 'img/clients/nochlejka.svg', alt: 'НОЧЛЕЖКА'},
+			{src: 'img/clients/key.svg', alt: 'КЕЙ'},
+			{src: 'img/clients/qiwi.svg', alt: 'OIWI'},
+			{src: 'img/clients/rosgos.svg', alt: 'Росгосстрах'},
+			{src: 'img/clients/lukoil.svg', alt: 'Лукойл'},
+			{src: 'img/clients/tess.svg', alt: 'TESS'},
+			{src: 'img/clients/amway.svg', alt: 'Amway'},
+			{src: 'img/clients/sela.svg', alt: 'SELA'},
+		]
+
+	section.clients(id='clients')
+		.container
+			.clients__inner.section-inner
+				.section-small-subtitle Клиенты
+				h2.clients__title.section-title Доверительные отношения
+				.clients__row
+					each client, i in clients
+						.clients__col
+							.clients__item
+								a.client__link(href='#')
+									img.clients__img(src= client.src alt= client.alt)
+
+
+

@@ -1,0 +1,144 @@
+@mixin field-focus {
+  outline: 0;
+  // box-shadow: 0 0 0 2px rgba($color-main, $opacity);
+}
+
+@mixin ul-none() {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin text-gradient($gradient-color, $color) {
+  display: inline-block;
+  color: $color;
+  background-image: $gradient-color;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin adaptive-hover {
+  @media (hover: hover) and (pointer: fine), (min-width: 0\0) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin mb($size) {
+  margin-bottom: $size;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@mixin mt($size) {
+  margin-top: $size;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+@mixin mr($size) {
+  margin-right: $size;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+@mixin ml($size) {
+  margin-left: $size;
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+
+@mixin line-bottom($topSize) {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: $topSize;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(#2b2b2b, .1);
+    transform: translateY(-50%);
+  }
+}
+
+
+$pi: 3.14159265359;
+$_precision: 10;
+
+@function pow($base, $exp) {
+  $value: $base;
+  @if $exp > 1 {
+    @for $i from 2 through $exp {
+      $value: $value * $base;
+    }
+  }
+  @if $exp < 1{
+    @for $i from 0 through -$exp {
+      $value: $value / $base;
+    }
+  }
+  @return $value;
+}
+
+@function fact($num) {
+  $fact: 1;
+  @if $num > 0{
+    @for $i from 1 through $num {
+      $fact: $fact * $i;
+    }
+  }
+  @return $fact;
+}
+
+@function _to_unitless_rad($angle) {
+  @if unit($angle) == "deg" {
+    $angle: $angle / 180deg * $pi;
+  }
+  @if unit($angle) == "rad" {
+    $angle: $angle / 1rad;
+  }
+  @return $angle;
+}
+
+@function sin($angle){
+  $a: _to_unitless_rad($angle);
+  $sin: $a;
+  @for $n from 1 through $_precision {
+    $sin: $sin + (pow(-1, $n) / fact(2 * $n + 1) ) * pow($a, (2 * $n + 1));
+  }
+  @return $sin;
+}
+
+@function cos($angle){
+  $a: _to_unitless_rad($angle);
+  $cos: 1;
+  @for $n from 1 through $_precision {
+    $cos: $cos + ( pow(-1, $n) / fact(2 * $n) ) * pow($a, 2 * $n);
+  }
+  @return $cos;
+}
+
+@function tan($angle){
+  @return sin($angle) / cos($angle);
+}

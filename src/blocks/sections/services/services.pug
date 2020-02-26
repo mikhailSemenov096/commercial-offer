@@ -1,0 +1,41 @@
+mixin services()
+	-
+		const servicesList = [
+			{
+				title: 'Дизайн',
+				list: ['Проектирование продуктов', 'Дизайн и документация', 'Юзабилити супервайзинг', 'Исследование и анализ']
+			},
+
+			{
+				title: 'Разработка',
+				list: ['Сложный front-end', 'Разработка функционала', 'Интеграция и внедрение', 'Техподдержка']
+			},
+
+			{
+				title: 'Продвижение',
+				list: ['Контекстная реклама', 'Продвижение и SMM', 'Контент-менеджмент', 'Брендинг']
+			},
+
+			{
+				title: 'Автоматизация',
+				list: ['Автоматизация бизнеса', 'Внедрение Битрикс24']
+			}
+		]
+	section.services(id='services')
+		.container
+			.services__inner.section-inner
+				.section-small-subtitle Все Digital-услуги
+				h2.services__title.services__title_pp.section-title Можем удовлетворить все потребности, связанные с проектом
+				.services__row
+					.services__main.services__col.services__col_lg-8
+						.services__main-row
+							each servicesItem, i in servicesList
+								.services__main-col.services__main-col_pp
+									.services__main-item
+										h3.services__main-item-title.section-title-h3= servicesItem.title
+										ul.services__main-list 
+											each item, j in servicesItem.list
+												li.services__main-list-item= item
+					.services__add-info.services__col.services__col_lg-2
+						p.services__add-info-descr.
+							Мы объединяем компетенции по стратегии, дизайну, разработке, продвижению и автоматизации бизнеса клиентов

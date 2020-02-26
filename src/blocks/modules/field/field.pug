@@ -1,0 +1,5 @@
+mixin field(data)
+	div(class=`${data.mod} field-wrap`)
+		label.field-wrap__label(for= data.id) Введите email
+		input.field-wrap__input(type= data.type id= data.id autocomplete='off' name= data.name)
+		small.field-wrap__text-error

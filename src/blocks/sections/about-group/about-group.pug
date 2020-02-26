@@ -1,0 +1,47 @@
+mixin about-group()
+	-
+		const mainList = [
+			{
+				title: `Группе более 10 лет`,
+				description: `Компания известна на рынке, имеет положительную репутацию и сформированные процессы`,
+				mod: '_purple'
+				
+			},
+
+			{
+				title: `Супер экспертность`,
+				description: `Большой штат в офисах Москвы, Санкт-Петербурга и Уфы работает более 50 разработчиков, маркетологов, дизайнеров, менеджеров`,
+				mod: '_yellow about-group__main-item_semicircle'
+			},
+
+			{
+				title: `Продуктовый подход`,
+				description: `Твердо убеждены, что единственная метрика нашей работы — бизнес-показатели наших клиентов. Really feels like inhouse team`,
+				mod: '_orange'
+			},
+
+			{
+				title: `Обучаем других`,
+				description: `Руководители читают лекции в школах и ВУЗах по digital образованию. В 2018 запустили собственный курс по UX для продуктовых компаний`,
+				mod: '_grey about-group__main-item_square'
+			}
+		]
+
+	section.about-group(id='about-group')
+		.container
+			.about-group__inner.section-inner
+				.section-small-subtitle О группе
+				h2.about-group__title.section-title Мы создаем продукты, помогающие развиваться и зарабатывать бизнесу
+				.about-group__row
+					.about-group__main
+						.about-group__main-row
+							each mainItem, i in mainList
+								.about-group__main-col
+									.about-group__main-item(class=`about-group__main-item${mainItem.mod} shadow-item`)
+										h3.about-group__main-item-title.section-title-h3= mainItem.title
+										p.about-group__main-item-descr= mainItem.description
+					.about-group__add-info
+						p.about-group__add-info-descr.
+							Мы партнеры крупнейших российских агентств Аgima, MST, Notamedia, СПАЙК, ONY, Медиасфера, IWILL
+						p.about-group__add-info-descr.
+							Являемся спикерами конференций RIW, СПИК, РИФ+КИБ, ProfsoUX, User Experience, eTarget, SPECIA, Дизайн-кUXня, PiterCSS,  Трава, WUD
